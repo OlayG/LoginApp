@@ -2,13 +2,14 @@ package com.olayg.loginapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.olayg.loginapp.databinding.ActivityLoginBinding;
+
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,21 +27,15 @@ public class MainActivity extends AppCompatActivity {
         EditText username = binding.usernameContainer.getEditText();
         EditText password = binding.passwordContainer.getEditText();
 
-        if (username != null || password != null) {
-            assert username != null;
-            String usernameText = username.getText().toString();
+        String usernameText = username != null ? username.getText().toString() : null;
+        String passwordText = password != null ? password.getText().toString() : null;
 
-            assert password != null;
-            String passwordText = password.getText().toString();
+        if (!Objects.equals(usernameText, "") && Objects.equals(passwordText, "workisfun")) {
+            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+            intent.putExtra("username", usernameText);
+            intent.putExtra("password", passwordText);
 
-            if (passwordText.equals("workisfun")) {
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                intent.putExtra("username", usernameText);
-                intent.putExtra("password", passwordText);
-
-                final Runnable r = () -> startActivity(intent);
-                new Handler().post(r);
-            }
+            startActivity(intent);
         }
     }
 }
