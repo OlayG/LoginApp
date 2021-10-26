@@ -3,14 +3,11 @@ package com.olayg.loginapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.olayg.loginapp.databinding.ActivityHomeBinding;
 import com.olayg.loginapp.databinding.ActivityLoginBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private ActivityLoginBinding binding;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
