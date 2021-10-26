@@ -13,10 +13,11 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         ActivityHomeBinding binding = ActivityHomeBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
 
         String username = getIntent().getStringExtra("username");
 
         binding.tvWelcome.setText(String.format("Hello, %s", username));
+
+        setContentView(binding.getRoot());
     }
 }

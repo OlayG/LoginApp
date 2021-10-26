@@ -21,10 +21,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
 
         MaterialButton button = binding.btnLogin;
         button.setOnClickListener(this::onLogin);
+
+        setContentView(binding.getRoot());
     }
 
     public void onLogin(View view) {
