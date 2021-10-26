@@ -7,6 +7,7 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.button.MaterialButton;
 import com.olayg.loginapp.databinding.ActivityLoginBinding;
 
 import java.util.Objects;
@@ -21,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        MaterialButton button = binding.btnLogin;
+        button.setOnClickListener(this::onLogin);
     }
 
     public void onLogin(View view) {
@@ -33,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         if (!Objects.equals(usernameText, "") && Objects.equals(passwordText, "workisfun")) {
             Intent intent = new Intent(MainActivity.this, SecondActivity.class);
             intent.putExtra("username", usernameText);
-            intent.putExtra("password", passwordText);
 
             startActivity(intent);
         }
