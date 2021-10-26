@@ -14,6 +14,8 @@ public class HomeActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(binding.getRoot());
-        binding.tvWelcome.setText("Hello, FireNinja");
+
+        String extraString = getIntent().getStringExtra("extraString");
+        binding.tvWelcome.setText("Hello, " + extraString);
     }
 }
