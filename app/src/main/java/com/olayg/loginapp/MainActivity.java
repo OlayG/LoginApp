@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
     }
 
-    public void onLogin(View view) {
+    private void onLogin(View view) {
         EditText username = binding.usernameContainer.getEditText();
         EditText password = binding.passwordContainer.getEditText();
 
