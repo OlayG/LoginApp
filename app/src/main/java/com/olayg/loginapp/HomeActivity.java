@@ -10,9 +10,9 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         ActivityHomeBinding binding = ActivityHomeBinding.inflate(getLayoutInflater());
 
-        super.onCreate(savedInstanceState);
         setContentView(binding.getRoot());
 
         String extraString = getIntent().getStringExtra("extraString");
