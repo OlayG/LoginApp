@@ -1,7 +1,6 @@
 package com.olayg.loginapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -20,19 +19,12 @@ public class LoginActivity extends AppCompatActivity {
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                username = binding.usernameContainer.getEditText().toString();
-                password = binding.passwordContainer.getEditText().toString();
-
-                Intent usernameInput = new Intent(LoginActivity.this, HomeActivity.class);
-                usernameInput.putExtra("data", username);
-                Intent passwordInput = new Intent(LoginActivity.this, HomeActivity.class);
-                passwordInput.putExtra("data", password);
-                startActivity(usernameInput);
-                startActivity(passwordInput);
-            }
+        binding.btnLogin.setOnClickListener((View v) -> {
+            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+            //Adding data to the Intent for next component
+            intent.putExtra("usernameData", binding.usernameContainer.getEditText().getText().toString());
+            startActivity(intent);
         });
+
     }
 }
