@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+* intent-filter sets certain rules to the activity
+* every module will get it's own manifest and it's own gradle
+*
+-->
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.olayg.loginapp">
@@ -11,24 +17,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginApp"
         tools:ignore="AllowBackup">
+        <!-- Only need exported if you're using intent-filter -->
         <activity
             android:name=".LoginActivity"
             android:exported="true">
+            <!-- action and category for MAIN & LAUNCHER should only be used for ONE activity -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".HomeActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <!-- (exported) if true, the activity is accessible to any app and if false then only components of the same app or app with the
+                    same User ID can start the service or bind to it -->
+        <activity android:name=".HomeActivity" />
     </application>
 
 </manifest>
