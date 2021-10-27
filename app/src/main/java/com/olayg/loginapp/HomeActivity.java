@@ -21,7 +21,9 @@ public class HomeActivity extends AppCompatActivity {
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-        String usernameValue = getIntent().getStringExtra("usernameData");
-        binding.tvWelcome.setText("Hello, " + usernameValue);
+        String userName = getIntent().getStringExtra("username");
+        binding.tvWelcome.setText("Hello, " + userName);
+//        String usernameValue = getIntent().getStringExtra("usernameData");
+//        binding.tvWelcome.setText("Hello, " + usernameValue);
     }
 }

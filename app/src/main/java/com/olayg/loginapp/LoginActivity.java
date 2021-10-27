@@ -26,12 +26,11 @@ public class LoginActivity extends AppCompatActivity {
 
         });
 
-        String name = binding.usernameContainer.getEditText().getText().toString();
-        String password = binding.passwordContainer.getEditText().getText().toString();
-
         binding.btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String name = binding.usernameContainer.getEditText().getText().toString();
+                String password = binding.passwordContainer.getEditText().getText().toString();
                 // Intent is a way to let the OS know you want to navigate between two components
                 // Can be used to pass data, we are using it explicitly
                                             // Start point , End point
