@@ -8,6 +8,8 @@ import com.olayg.loginapp.databinding.ActivityLoginBinding;
 
 public class LoginActivity extends AppCompatActivity {
 
+    String username, password;
+
     private ActivityLoginBinding binding;
 
     @Override
