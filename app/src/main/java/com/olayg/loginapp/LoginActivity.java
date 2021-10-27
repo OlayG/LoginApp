@@ -26,8 +26,12 @@ public class LoginActivity extends AppCompatActivity {
                 username = binding.usernameContainer.getEditText().toString();
                 password = binding.passwordContainer.getEditText().toString();
 
-                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-
+                Intent usernameInput = new Intent(LoginActivity.this, HomeActivity.class);
+                usernameInput.putExtra("data", username);
+                Intent passwordInput = new Intent(LoginActivity.this, HomeActivity.class);
+                passwordInput.putExtra("data", password);
+                startActivity(usernameInput);
+                startActivity(passwordInput);
             }
         });
     }
