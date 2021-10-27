@@ -14,6 +14,8 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        setContentView(R.layout.activity_home);
+        String username = getIntent().getStringExtra("user");
+        binding.tvWelcome.setText("hello, " + username);
     }
 }

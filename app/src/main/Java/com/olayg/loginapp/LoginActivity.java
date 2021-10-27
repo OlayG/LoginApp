@@ -7,6 +7,7 @@ import com.olayg.loginapp.databinding.ActivityLoginBinding;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -26,7 +27,12 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
+                String name = binding.usernameContainer.getEditText().getText().toString();
+                String pass = binding.passwordContainer.getEditText().getText().toString();
+                Intent urMom = new Intent(LoginActivity.this, HomeActivity.class);
+                urMom.putExtra("user", name);
+                urMom.putExtra("pass", pass);
+                startActivity(urMom);
             }
         });
 //        initialize binding
