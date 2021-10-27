@@ -11,6 +11,8 @@ import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
 
+    public static final String UNTag = "username";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
                     .toString();
             // Code here executes on main thread after user presses button
             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-            intent.putExtra("extraString", username);
+            intent.putExtra(Constants.USERNAME_TAG, username);
             startActivity(intent);
         });
     }

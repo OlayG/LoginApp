@@ -15,7 +15,7 @@ public class HomeActivity extends AppCompatActivity {
 
         setContentView(binding.getRoot());
 
-        String extraString = getIntent().getStringExtra("extraString");
-        binding.tvWelcome.setText("Hello, " + extraString);
+        String username = getIntent().getStringExtra(Constants.USERNAME_TAG);
+        binding.tvWelcome.setText("Hello, " + username + "!");
     }
 }
